@@ -24,17 +24,21 @@ def get_character_movies_from_api(character)
   #  and that method will do some nice presentation stuff: puts out a list
   #  of movies by title. play around with puts out other info about a given film.
 end
- 
-get_character_movies_from_api("C-3PO")
 
 def parse_character_movies(films_hash)
-  # some iteration magic and puts out the movies in a nice list
+  films_hash.each do |film|
+    puts film["title"]
+  end
 end
+
+
 
 def show_character_movies(character)
   films_hash = get_character_movies_from_api(character)
   parse_character_movies(films_hash)
 end
+
+show_character_movies("R2-D2")
 
 ## BONUS
 
